@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const menu = (size) => {
+const menu = (controller) => {
   rl.question(
     "[Y] to continue with the next rover or any other key to abort:",
     (option) => {
@@ -22,13 +22,12 @@ const menu = (size) => {
             "Type a instructions (example: LMLMLMLMM): ",
             (instructions) => {
               try {
-                const missionController = new MissionRoverController(size);
-                missionController.addRover(landingPosition);
+                controller.addRover(landingPosition);
                 console.log(
                   "Result Position: ",
-                  missionController.execute(instructions)
+                  controller.execute(instructions)
                 );
-                menu(size);
+                menu(controller);
               } catch (error) {
                 rl.write(error.message);
                 return rl.close();
@@ -45,8 +44,13 @@ const main = () => {
   rl.question(
     "Enter an integer to define the plateau size (example: 5): ",
     (size) => {
-      size = Number(size);
-      menu(size);
+      try {
+        const missionController = new MissionRoverController(Number(size));
+        menu(missionController);
+      } catch (error) {
+        console.log(error.message);
+        return rl.close();
+      }
     }
   );
 };
