@@ -1,7 +1,7 @@
 const MissionRoverController = require("../controllers/MissionRoverController");
 
 const makeSut = () => {
-  return new MissionRoverController();
+  return new MissionRoverController(5);
 };
 
 describe("Voyager examples", () => {
