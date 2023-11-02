@@ -28,7 +28,7 @@ const menu = (size) => {
                   "Result Position: ",
                   missionController.execute(instructions)
                 );
-                menu();
+                menu(size);
               } catch (error) {
                 rl.write(error.message);
                 return rl.close();
