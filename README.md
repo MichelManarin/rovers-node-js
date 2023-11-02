@@ -80,3 +80,12 @@ After running the project, a menu will be displayed to input the information
 ## External packages
 
 I used the "readline" package to capture user inputs and "Jest" to create tests.
+
+## Tests Results:
+
+![test](https://user-images.githubusercontent.com/6588753/280136101-b7db6226-3965-4656-8e29-1b3faf03dae5.png)
+
+
+## Operation:
+![operation](https://user-images.githubusercontent.com/6588753/280136104-85336527-88c5-47c7-958e-489c614dcaeb.png)
+
