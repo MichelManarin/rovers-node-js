@@ -2,8 +2,8 @@ const ExecuteCommander = require("../services/ExecuteCommander");
 const MissionRovers = require("../models/MissionRovers");
 
 class MissionRoverController {
-  constructor() {
-    this._mission = new MissionRovers(5);
+  constructor(size) {
+    this._mission = new MissionRovers(size);
   }
 
   addRover(landingPosition) {
