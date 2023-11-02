@@ -7,7 +7,9 @@ const MovementTurnRight = require("./movements/MovementTurnRight");
 
 class ExecuteCommander {
   run(mission, instructionsCommand) {
-    const instructionsToProcess = instructionsCommand.replaceAll("MLR", SPIN);
+    const instructionsToProcess = instructionsCommand
+      .toUpperCase()
+      .replaceAll("MLR", SPIN);
 
     const rover = mission.getLastRover();
 

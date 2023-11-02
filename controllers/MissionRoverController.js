@@ -7,7 +7,7 @@ class MissionRoverController {
   }
 
   addRover(landingPosition) {
-    const landingCommand = landingPosition.replace(/\s+/g, "");
+    const landingCommand = landingPosition.replace(/\s+/g, "").toUpperCase();
     if (landingCommand.length != 3) throw new Error("Invalid Initial Position");
 
     const [x, y, orientation] = landingCommand;

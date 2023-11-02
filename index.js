@@ -11,7 +11,7 @@ const menu = (size) => {
   rl.question(
     "[Y] to continue with the next rover or any other key to abort:",
     (option) => {
-      if (option !== "Y") {
+      if (option.toUpperCase() !== "Y") {
         rl.write("closing...");
         return rl.close();
       }
