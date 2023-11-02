@@ -3,6 +3,9 @@ const Rover = require("./Rover.js");
 
 class MissionRovers {
   constructor(plateauSize) {
+    if (!Number.isInteger(plateauSize))
+      throw new Error("plateauSize is not an Integer");
+
     this._plateau = new Plateau(plateauSize, plateauSize);
     this._rovers = [];
   }
@@ -20,8 +23,6 @@ class MissionRovers {
   validateOut(rover) {
     this._plateau.validate(rover);
   }
-
-
 }
 
 module.exports = MissionRovers;
